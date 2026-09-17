@@ -1,0 +1,384 @@
+/**
+ * Brows by Veron - Complete Visual WYSIWYG Editor Styles
+ * 100% Parity with Frontend View
+ */
+
+/* ==========================================================================
+   CSS Variables & Typography Base
+   ========================================================================== */
+:root {
+    --bv-bg: #F7F4EE;
+    --bv-bg-soft: #EFEAE0;
+    --bv-card: #FFFFFF;
+    --bv-ink: #1E1815;
+    --bv-brown: #6B4E3D;
+    --bv-brown-dark: #523B2D;
+    --bv-brown-light: #8D6B56;
+    --bv-brown-soft: #ECE3D9;
+    --bv-taupe: #A68674;
+    --bv-muted: #6B5548;
+    --bv-border: #E0D6C8;
+    --bv-border-light: #EDE6DC;
+    --bv-discount: #C75252;
+    --bv-footer: #241C18;
+    --bv-font-sans: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bv-font-serif: 'Merriweather', Georgia, serif;
+}
+
+body,
+.editor-styles-wrapper {
+    background-color: var(--bv-bg) !important;
+    color: var(--bv-muted) !important;
+    font-family: var(--bv-font-sans) !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    padding: 0 !important;
+}
+
+.editor-styles-wrapper .bv-visual-editor.wp-block {
+    max-width: none !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0;
+    font-family: var(--bv-font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--bv-muted);
+}
+
+/* Force Scroll-Reveal Elements to be Always 100% Visible in Editor */
+.bbz-reveal,
+.editor-styles-wrapper .bbz-reveal,
+.bv-visual-editor .bbz-reveal,
+:where(.bv-visual-editor) .bbz-reveal,
+.block-editor-block-list__block .bbz-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+}
+
+/* Headings */
+.bv-visual-editor h1,
+.bv-visual-editor h2,
+.bv-visual-editor h3,
+.bv-visual-editor h4,
+.bv-visual-editor .font-serif {
+    font-family: var(--bv-font-serif) !important;
+    font-weight: 700 !important;
+    color: var(--bv-ink) !important;
+}
+
+/* Inline Editing Controls */
+.bv-visual-editor [contenteditable] { cursor: text; }
+.bv-visual-editor [contenteditable]:hover { outline: 1px dashed #a68674; outline-offset: 3px; }
+.bv-visual-editor [contenteditable]:focus { outline: 2px solid #6b4e3d; outline-offset: 3px; }
+.bv-visual-editor .bv-inline-text { display: inline; }
+.bv-visual-editor .bv-editable-image {
+    cursor: pointer !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+}
+.bv-visual-editor .bv-image-edit-wrapper {
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+.bv-visual-editor .bv-image-edit-badge {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: rgba(30, 24, 21, 0.85) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    padding: 5px 12px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    cursor: pointer !important;
+    z-index: 50 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.2s ease !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.bv-visual-editor .bv-image-edit-wrapper:hover .bv-image-edit-badge {
+    background: #6B4E3D !important;
+    border-color: #EDE6DC !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 6px 20px rgba(107, 78, 61, 0.4) !important;
+}
+
+.bv-visual-editor [contenteditable]:empty::after { content: '\00a0'; }
+
+/* ==========================================================================
+   Layout & Container Utilities
+   ========================================================================== */
+.bv-visual-editor .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .max-w-3xl { max-width: 48rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .max-w-2xl { max-width: 42rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .max-w-xl { max-width: 36rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .max-w-sm { max-width: 24rem; margin-left: auto; margin-right: auto; }
+.bv-visual-editor .mx-auto { margin-left: auto; margin-right: auto; }
+.bv-visual-editor .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.bv-visual-editor .px-8 { padding-left: 2rem; padding-right: 2rem; }
+.bv-visual-editor .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.bv-visual-editor .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.bv-visual-editor .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.bv-visual-editor .pt-10 { padding-top: 2.5rem; }
+.bv-visual-editor .pb-16 { padding-bottom: 4rem; }
+.bv-visual-editor .pb-20 { padding-bottom: 5rem; }
+.bv-visual-editor .relative { position: relative; }
+.bv-visual-editor .text-center { text-align: center; }
+
+/* Colors */
+/* Colors & Badges */
+.bv-visual-editor .bg-bv-bg { background-color: var(--bv-bg) !important; }
+.bv-visual-editor .bg-bv-bg-soft { background-color: var(--bv-bg-soft) !important; }
+.bv-visual-editor .bg-white { background-color: #FFFFFF !important; }
+.bv-visual-editor .bg-bv-brown { background-color: var(--bv-brown) !important; }
+.bv-visual-editor .bg-bv-brown { background-color: var(--bv-brown) !important; color: #FFFFFF !important; }
+.bv-visual-editor .text-white { color: #FFFFFF !important; }
+.bv-visual-editor .text-bv-ink { color: var(--bv-ink) !important; }
+.bv-visual-editor .text-bv-brown { color: var(--bv-brown) !important; }
+.bv-visual-editor .text-bv-muted { color: var(--bv-muted) !important; }
+.bv-visual-editor .text-bv-discount { color: var(--bv-discount) !important; }
+.bv-visual-editor .border-bv-border { border-color: var(--bv-border) !important; }
+.bv-visual-editor .border-bv-border-light { border-color: var(--bv-border-light) !important; }
+.bv-visual-editor .inline-block { display: inline-block !important; }
+.bv-visual-editor .uppercase { text-transform: uppercase !important; }
+.bv-visual-editor .font-bold { font-weight: 700 !important; }
+.bv-visual-editor .font-semibold { font-weight: 600 !important; }
+.bv-visual-editor .tracking-wider { letter-spacing: 0.05em !important; }
+.bv-visual-editor .tracking-widest { letter-spacing: 0.1em !important; }
+.bv-visual-editor .px-3 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+.bv-visual-editor .py-1 { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+.bv-visual-editor .mb-2 { margin-bottom: 0.5rem !important; }
+.bv-visual-editor .mb-3 { margin-bottom: 0.75rem !important; }
+.bv-visual-editor .mb-4 { margin-bottom: 1rem !important; }
+.bv-visual-editor .rounded-full { border-radius: 9999px !important; }
+.bv-visual-editor .text-\[0\.65rem\] { font-size: 0.65rem !important; }
+.bv-visual-editor .text-\[0\.62rem\] { font-size: 0.62rem !important; }
+
+/* Flex & Grid Systems */
+.bv-visual-editor .flex { display: flex; }
+.bv-visual-editor .inline-flex { display: inline-flex; }
+.bv-visual-editor .flex-col { flex-direction: column; }
+.bv-visual-editor .items-center { align-items: center; }
+.bv-visual-editor .items-start { align-items: flex-start; }
+.bv-visual-editor .items-baseline { align-items: baseline; }
+.bv-visual-editor .justify-center { justify-content: center; }
+.bv-visual-editor .justify-between { justify-content: space-between; }
+.bv-visual-editor .flex-1 { flex: 1 1 0%; }
+.bv-visual-editor .shrink-0 { flex-shrink: 0; }
+
+.bv-visual-editor .grid { display: grid; }
+.bv-visual-editor .gap-2 { gap: 0.5rem; }
+.bv-visual-editor .gap-3 { gap: 0.75rem; }
+.bv-visual-editor .gap-4 { gap: 1rem; }
+.bv-visual-editor .gap-6 { gap: 1.5rem; }
+.bv-visual-editor .gap-8 { gap: 2rem; }
+.bv-visual-editor .gap-12 { gap: 3rem; }
+
+.bv-visual-editor .space-y-1 > * + * { margin-top: 0.25rem; }
+.bv-visual-editor .space-y-2 > * + * { margin-top: 0.5rem; }
+.bv-visual-editor .space-y-2\.5 > * + * { margin-top: 0.625rem; }
+.bv-visual-editor .space-y-3 > * + * { margin-top: 0.75rem; }
+.bv-visual-editor .space-y-4 > * + * { margin-top: 1rem; }
+.bv-visual-editor .space-y-6 > * + * { margin-top: 1.5rem; }
+
+/* Desktop Grid Layouts (2-column, 3-column, 12-column) */
+.bv-visual-editor .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.bv-visual-editor .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bv-visual-editor .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (min-width: 768px) {
+    .bv-visual-editor .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bv-visual-editor .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+    .bv-visual-editor .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .bv-visual-editor .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .bv-visual-editor .lg\:col-span-4 { grid-column: span 4 / span 4; }
+    .bv-visual-editor .lg\:col-span-5 { grid-column: span 5 / span 5; }
+    .bv-visual-editor .lg\:col-span-7 { grid-column: span 7 / span 7; }
+    .bv-visual-editor .lg\:col-span-8 { grid-column: span 8 / span 8; }
+}
+
+/* Borders & Shadows */
+.bv-visual-editor .border { border-width: 1px; border-style: solid; }
+.bv-visual-editor .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+.bv-visual-editor .rounded-lg { border-radius: 0.5rem; }
+.bv-visual-editor .rounded-xl { border-radius: 0.75rem; }
+.bv-visual-editor .rounded-2xl { border-radius: 1.25rem; }
+.bv-visual-editor .rounded-full { border-radius: 9999px; }
+.bv-visual-editor .shadow-sm { box-shadow: 0 2px 8px rgba(107, 78, 61, 0.04); }
+.bv-visual-editor .shadow-md { box-shadow: 0 4px 15px rgba(107, 78, 61, 0.08); }
+.bv-visual-editor .shadow-2xl { box-shadow: 0 20px 40px -10px rgba(107, 78, 61, 0.2); }
+.bv-visual-editor .p-4 { padding: 1rem; }
+.bv-visual-editor .p-6 { padding: 1.5rem; }
+.bv-visual-editor .p-8 { padding: 2rem; }
+.bv-visual-editor .p-10 { padding: 2.5rem; }
+
+/* Dimensions & Icons */
+.bv-visual-editor .w-2 { width: 0.5rem; }
+.bv-visual-editor .h-2 { height: 0.5rem; }
+.bv-visual-editor .w-5 { width: 1.25rem; }
+.bv-visual-editor .h-5 { height: 1.25rem; }
+.bv-visual-editor .w-10 { width: 2.5rem; }
+.bv-visual-editor .h-10 { height: 2.5rem; }
+.bv-visual-editor .w-16 { width: 4rem; }
+.bv-visual-editor .h-0\.5 { height: 0.125rem; }
+.bv-visual-editor .h-px { height: 1px; }
+.bv-visual-editor .w-full { width: 100%; }
+.bv-visual-editor .h-full { height: 100%; }
+.bv-visual-editor .overflow-hidden { overflow: hidden; }
+.bv-visual-editor .object-cover { object-fit: cover; }
+
+/* ==========================================================================
+   Hero Section - Floating Polaroid Cluster
+   ========================================================================== */
+.bv-visual-editor .bv-hero-collage-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 1.5rem auto 2.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bv-visual-editor .bv-polaroid-left {
+    width: 230px;
+    margin-right: -45px;
+    z-index: 10;
+    transform: rotate(-6deg);
+}
+
+.bv-visual-editor .bv-polaroid-center {
+    width: 380px;
+    max-width: 92vw;
+    z-index: 20;
+    transform: scale(1.02);
+}
+
+.bv-visual-editor .bv-polaroid-right {
+    width: 230px;
+    margin-left: -45px;
+    z-index: 10;
+    transform: rotate(6deg);
+}
+
+.bv-visual-editor .bv-polaroid {
+    background: #FFFFFF;
+    padding: 0.875rem 0.875rem 1.25rem 0.875rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.14), 0 0 0 1px rgba(224, 214, 200, 0.7);
+    text-align: center;
+}
+
+.bv-visual-editor .bv-polaroid-left .bv-polaroid-media,
+.bv-visual-editor .bv-polaroid-right .bv-polaroid-media {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: var(--bv-bg-soft);
+    margin-bottom: 0.75rem;
+}
+
+.bv-visual-editor .bv-polaroid-center .bv-polaroid-media {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: var(--bv-bg-soft);
+    margin-bottom: 1rem;
+}
+
+.bv-visual-editor .bv-polaroid-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.bv-visual-editor .bv-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--bv-brown) !important;
+    color: #FFFFFF !important;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(107, 78, 61, 0.18);
+    border: 1.5px solid var(--bv-brown);
+}
+
+.bv-visual-editor .bv-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: transparent !important;
+    color: var(--bv-brown) !important;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    border: 1.5px solid var(--bv-brown);
+}
+
+/* ==========================================================================
+   Pricing Cards
+   ========================================================================== */
+.bv-visual-editor .bv-price-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--bv-border-light);
+    border-radius: 1.25rem;
+    padding: 2.25rem 1.75rem;
+    box-shadow: 0 4px 20px rgba(107, 78, 61, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.bv-visual-editor .bv-price-card.featured {
+    border: 2px solid var(--bv-brown);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+    box-shadow: 0 12px 35px -5px rgba(107, 78, 61, 0.15);
+}
+
+.bv-visual-editor .price-strike {
+    text-decoration: line-through;
+    color: var(--bv-discount);
+}
+
+/* ==========================================================================
+   Results Gallery & Terms
+   ========================================================================== */
+.bv-visual-editor .aspect-\[4\/5\] { aspect-ratio: 4/5; }
+.bv-visual-editor .aspect-\[3\/4\] { aspect-ratio: 3/4; }
+.bv-visual-editor .aspect-square { aspect-ratio: 1/1; }
+
+.bv-visual-editor .bv-term-item {
+    background: #FFFFFF;
+    border: 1px solid var(--bv-border-light);
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 0.75rem;
+}

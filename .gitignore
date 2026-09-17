@@ -1,0 +1,66 @@
+# ==============================================================================
+# WordPress .gitignore
+# ==============================================================================
+
+# WordPress Configuration & Credentials (Sensitive!)
+wp-config.php
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Uploads and User Media (Keep repo lightweight)
+wp-content/uploads/
+wp-content/blogs.dir/
+
+# Upgrades, Backups & Temporary Directories
+wp-content/upgrade/
+wp-content/ai1wm-backups/
+wp-content/backups/
+wp-content/backup-db/
+PaxHeaders/
+**/PaxHeaders/
+
+# Caches
+wp-content/cache/
+wp-content/et-cache/
+wp-content/w3tc-config/
+
+# Logs & Debugging
+*.log
+wp-content/debug.log
+error_log
+
+# Database Dumps & Archives
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+*.7z
+
+# Dependency & Build Directories (if applicable)
+node_modules/
+vendor/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS & Editor Specific Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+

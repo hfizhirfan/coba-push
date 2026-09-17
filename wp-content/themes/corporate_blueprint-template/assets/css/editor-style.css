@@ -1,0 +1,440 @@
+/**
+ * Brows by Veron - Gutenberg Block Editor & FSE Site Editor WYSIWYG Stylesheet
+ * 100% Visual Parity with Frontend
+ * Font: Merriweather (Headings) & Plus Jakarta Sans (Body)
+ * Color: Warm Ivory (#F7F4EE) & Mocha Taupe (#6B4E3D)
+ */
+
+/* ==========================================================================
+   Base Canvas & Typography
+   ========================================================================== */
+body,
+.editor-styles-wrapper {
+    background-color: #F7F4EE !important;
+    color: #6B5548 !important;
+    font-family: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+}
+
+/* Ensure Scroll Reveal is always visible in Editor */
+.bbz-reveal,
+.editor-styles-wrapper .bbz-reveal,
+.bv-visual-editor .bbz-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+/* Headings in Gutenberg */
+h1, h2, h3, h4, h5, h6,
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.font-serif {
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-weight: 700 !important;
+    color: #1E1815 !important;
+}
+
+h1, .editor-styles-wrapper h1, .bv-hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem) !important;
+    line-height: 1.25 !important;
+}
+
+h2, .editor-styles-wrapper h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem) !important;
+    line-height: 1.3 !important;
+}
+
+h3, .editor-styles-wrapper h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+    line-height: 1.35 !important;
+}
+
+h4, .editor-styles-wrapper h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+}
+
+/* Utility Colors & Text */
+.text-bv-brown,
+.editor-styles-wrapper .text-bv-brown {
+    color: #6B4E3D !important;
+}
+
+.text-bv-ink,
+.editor-styles-wrapper .text-bv-ink {
+    color: #1E1815 !important;
+}
+
+.text-bv-muted,
+.editor-styles-wrapper .text-bv-muted {
+    color: #6B5548 !important;
+}
+
+/* ==========================================================================
+   Header & Footer FSE Parts
+   ========================================================================== */
+.bv-header-wrapper {
+    background: rgba(247, 244, 238, 0.95);
+    border-bottom: 1px solid #E0D6C8;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.bv-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.bv-header-brand a,
+.bv-header-brand .wp-block-site-title a {
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #1E1815 !important;
+    text-decoration: none !important;
+}
+
+.bv-nav-links a {
+    color: #1E1815 !important;
+    font-weight: 600 !important;
+    font-size: 0.9375rem !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.bv-nav-links a:hover {
+    color: #6B4E3D !important;
+}
+
+.bv-footer-block {
+    background-color: #241C18 !important;
+    color: #FFFFFF !important;
+    padding: 4rem 1.5rem 2.5rem 1.5rem !important;
+}
+
+.bv-footer-block h4,
+.bv-footer-block .wp-block-heading {
+    color: #FFFFFF !important;
+    font-family: 'Merriweather', Georgia, serif !important;
+    margin-bottom: 1rem !important;
+}
+
+.bv-footer-block a {
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.bv-footer-block a:hover {
+    color: #A68674 !important;
+}
+
+/* ==========================================================================
+   Section Containers
+   ========================================================================== */
+.bv-section-hero,
+.bv-section-about,
+.bv-section-services,
+.bv-section-pricing,
+.bv-section-gallery,
+.bv-section-terms,
+.bv-section-contact,
+.editor-styles-wrapper .bv-section-hero,
+.editor-styles-wrapper .bv-section-about,
+.editor-styles-wrapper .bv-section-services,
+.editor-styles-wrapper .bv-section-pricing,
+.editor-styles-wrapper .bv-section-gallery,
+.editor-styles-wrapper .bv-section-terms,
+.editor-styles-wrapper .bv-section-contact {
+    max-width: 1140px !important;
+    margin: 0 auto 4rem auto !important;
+    padding: 3.5rem 2rem !important;
+    border-radius: 1.5rem !important;
+}
+
+.bv-section-hero,
+.bv-section-services,
+.bv-section-gallery,
+.bv-section-contact,
+.editor-styles-wrapper .bv-section-hero,
+.editor-styles-wrapper .bv-section-services,
+.editor-styles-wrapper .bv-section-gallery,
+.editor-styles-wrapper .bv-section-contact {
+    background-color: #F7F4EE !important;
+}
+
+.bv-section-about,
+.bv-section-pricing,
+.bv-section-terms,
+.editor-styles-wrapper .bv-section-about,
+.editor-styles-wrapper .bv-section-pricing,
+.editor-styles-wrapper .bv-section-terms {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.06) !important;
+    border: 1px solid #EDE6DC !important;
+}
+
+/* ==========================================================================
+   Hero Section & Polaroid Collage
+   ========================================================================== */
+.bv-hero-welcome,
+.editor-styles-wrapper .bv-hero-welcome {
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-size: 1.5rem !important;
+    color: #6B4E3D !important;
+    font-style: italic !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.bv-hero-sub,
+.editor-styles-wrapper .bv-hero-sub {
+    font-size: 0.8125rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.25em !important;
+    font-weight: 700 !important;
+    color: #6B5548 !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.bv-hero-collage,
+.editor-styles-wrapper .bv-hero-collage {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    margin: 2.5rem auto !important;
+    max-width: 900px !important;
+}
+
+.bv-col-polaroid,
+.editor-styles-wrapper .bv-col-polaroid {
+    flex: 1 !important;
+}
+
+.bv-polaroid-center,
+.editor-styles-wrapper .bv-polaroid-center {
+    flex: 1.25 !important;
+    transform: scale(1.05) !important;
+    z-index: 10 !important;
+}
+
+.bv-rotate-left,
+.editor-styles-wrapper .bv-rotate-left {
+    transform: rotate(-2.5deg) !important;
+}
+
+.bv-rotate-right,
+.editor-styles-wrapper .bv-rotate-right {
+    transform: rotate(2.5deg) !important;
+}
+
+.bv-polaroid,
+.editor-styles-wrapper .bv-polaroid {
+    background: #FFFFFF !important;
+    padding: 0.875rem 0.875rem 1.25rem 0.875rem !important;
+    border-radius: 0.875rem !important;
+    box-shadow: 0 12px 30px -5px rgba(107, 78, 61, 0.15) !important;
+    border: 1px solid #EDE6DC !important;
+    text-align: center !important;
+}
+
+.bv-polaroid img,
+.editor-styles-wrapper .bv-polaroid img {
+    border-radius: 0.5rem !important;
+    width: 100% !important;
+    aspect-ratio: 4/5 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.bv-polaroid-caption,
+.editor-styles-wrapper .bv-polaroid-caption {
+    font-size: 0.9375rem !important;
+    color: #1E1815 !important;
+    margin-top: 0.75rem !important;
+    line-height: 1.3 !important;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.bv-btn-primary a,
+.bv-btn-primary .wp-block-button__link,
+.editor-styles-wrapper .bv-btn-primary a,
+.editor-styles-wrapper .bv-btn-primary .wp-block-button__link {
+    background: #6B4E3D !important;
+    color: #FFFFFF !important;
+    border-radius: 9999px !important;
+    padding: 0.8125rem 1.75rem !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    border: 1.5px solid #6B4E3D !important;
+    box-shadow: 0 4px 15px rgba(107, 78, 61, 0.18) !important;
+    transition: all 0.2s ease !important;
+}
+
+.bv-btn-primary a:hover,
+.bv-btn-primary .wp-block-button__link:hover {
+    background: #523B2D !important;
+    border-color: #523B2D !important;
+}
+
+.bv-btn-outline a,
+.bv-btn-outline .wp-block-button__link,
+.editor-styles-wrapper .bv-btn-outline a,
+.editor-styles-wrapper .bv-btn-outline .wp-block-button__link {
+    background: transparent !important;
+    color: #6B4E3D !important;
+    border-radius: 9999px !important;
+    padding: 0.8125rem 1.75rem !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    border: 1.5px solid #6B4E3D !important;
+    transition: all 0.2s ease !important;
+}
+
+.bv-btn-outline a:hover,
+.bv-btn-outline .wp-block-button__link:hover {
+    background: #ECE3D9 !important;
+}
+
+/* ==========================================================================
+   About Section & Stats
+   ========================================================================== */
+.bv-about-grid,
+.editor-styles-wrapper .bv-about-grid {
+    display: flex !important;
+    align-items: center !important;
+    gap: 3.5rem !important;
+}
+
+.bv-about-left,
+.editor-styles-wrapper .bv-about-left {
+    flex: 1.4 !important;
+}
+
+.bv-about-right,
+.editor-styles-wrapper .bv-about-right {
+    flex: 1 !important;
+}
+
+.bv-stats-row,
+.editor-styles-wrapper .bv-stats-row {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+}
+
+.bv-stat-box,
+.editor-styles-wrapper .bv-stat-box {
+    background: #F7F4EE !important;
+    padding: 1.125rem 0.875rem !important;
+    border-radius: 0.875rem !important;
+    border: 1px solid #EDE6DC !important;
+    margin: 0 !important;
+    text-align: center !important;
+    flex: 1 !important;
+}
+
+/* ==========================================================================
+   Services & Quality Promise
+   ========================================================================== */
+.bv-services-grid,
+.editor-styles-wrapper .bv-services-grid {
+    display: flex !important;
+    align-items: center !important;
+    gap: 3.5rem !important;
+}
+
+.bv-promise-item,
+.editor-styles-wrapper .bv-promise-item {
+    background: #F7F4EE !important;
+    padding: 1.125rem 1.5rem !important;
+    border-radius: 0.875rem !important;
+    border: 1px solid #EDE6DC !important;
+    margin-bottom: 0.875rem !important;
+}
+
+/* ==========================================================================
+   Pricing Cards
+   ========================================================================== */
+.bv-pricing-grid,
+.editor-styles-wrapper .bv-pricing-grid {
+    display: flex !important;
+    gap: 1.5rem !important;
+}
+
+.bv-price-card,
+.editor-styles-wrapper .bv-price-card {
+    background: #FFFFFF !important;
+    border: 1px solid #EDE6DC !important;
+    border-radius: 1.25rem !important;
+    padding: 2.25rem 1.75rem !important;
+    box-shadow: 0 4px 20px rgba(107, 78, 61, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+.bv-price-card.featured,
+.editor-styles-wrapper .bv-price-card.featured {
+    border: 2px solid #6B4E3D !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%) !important;
+    box-shadow: 0 12px 35px -5px rgba(107, 78, 61, 0.15) !important;
+}
+
+.price-strike,
+.editor-styles-wrapper .price-strike {
+    text-decoration: line-through !important;
+    color: #C75252 !important;
+}
+
+.bv-price-row,
+.editor-styles-wrapper .bv-price-row {
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    color: #1E1815 !important;
+    margin: 1rem 0 !important;
+}
+
+/* ==========================================================================
+   Gallery Grid & Terms Cards
+   ========================================================================== */
+.bv-gallery-grid,
+.editor-styles-wrapper .bv-gallery-grid {
+    display: flex !important;
+    gap: 1.5rem !important;
+}
+
+.bv-gallery-grid .bv-polaroid img,
+.editor-styles-wrapper .bv-gallery-grid .bv-polaroid img {
+    aspect-ratio: 1/1 !important;
+}
+
+.bv-term-item,
+.editor-styles-wrapper .bv-term-item {
+    background: #FFFFFF !important;
+    border: 1px solid #EDE6DC !important;
+    border-radius: 0.875rem !important;
+    padding: 1.25rem 1.75rem !important;
+    margin-bottom: 0.875rem !important;
+}

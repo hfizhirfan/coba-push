@@ -1,0 +1,1011 @@
+/* ==========================================================================
+   Brows by Veron - Luxury Brochure Palette & Typography System
+   Colors: Warm Ivory (#F7F4EE), Mocha Taupe (#6B4E3D), Deep Espresso (#1E1815)
+   Headings: Merriweather (Bold 700) [H1: 40px, H2: 35px, H3: 30px, H4: 25px, H5: 20px]
+   Base: Plus Jakarta Sans / Poppins / System Default (16px / Regular 400)
+   Buttons: Sans-Serif / 15px / Medium 500
+   Pullquote: Georgia / 25px / Semi-Bold 600
+   ========================================================================== */
+
+:root {
+    --bv-bg: #F7F4EE;
+    --bv-bg-soft: #EFEAE0;
+    --bv-bg-deep: #E5DEC8;
+    --bv-card: #FFFFFF;
+    --bv-ink: #1E1815;
+    --bv-brown: #6B4E3D;
+    --bv-brown-dark: #523B2D;
+    --bv-brown-light: #8D6B56;
+    --bv-brown-soft: #ECE3D9;
+    --bv-taupe: #A68674;
+    --bv-muted: #6B5548;
+    --bv-border: #E0D6C8;
+    --bv-border-light: #EDE6DC;
+    --bv-discount: #C75252;
+    --bv-footer: #241C18;
+    --whatsapp-green: #25D366;
+    --whatsapp-dark: #1EBE5D;
+
+    /* Typography Variables */
+    --bv-font-sans: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --bv-font-serif: 'Merriweather', Georgia, serif;
+    --bv-font-quote: 'Georgia', 'Merriweather', serif;
+}
+
+/* Base Frontend Typography */
+body:not(.wp-admin) {
+    overflow-x: hidden;
+    background-color: var(--bv-bg);
+    color: var(--bv-muted);
+    font-family: var(--bv-font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* WordPress Customizer Sidebar Protection - Prevent Any Font Bleed */
+#customize-controls,
+#customize-controls *,
+.wp-full-overlay-sidebar,
+.wp-full-overlay-sidebar * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+/* Headings Hierarchy Scoped strictly to Frontend Content */
+#primary h1, #primary h2, #primary h3, #primary h4, #primary h5,
+#bbz-header h1, #bbz-header h2, #bbz-header h3,
+#footer h1, #footer h2, #footer h3, #footer h4,
+.site-main h1, .site-main h2, .site-main h3, .site-main h4, .site-main h5,
+.font-serif {
+    font-family: var(--bv-font-serif);
+    font-weight: 700;
+    color: var(--bv-ink);
+}
+
+#primary h1, .site-main h1 {
+    font-size: 40px;
+    line-height: 1.25;
+}
+
+#primary h2, .site-main h2 {
+    font-size: 35px;
+    line-height: 1.3;
+}
+
+#primary h3, .site-main h3 {
+    font-size: 30px;
+    line-height: 1.35;
+}
+
+#primary h4, .site-main h4 {
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+#primary h5, .site-main h5 {
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+#primary h6, .site-main h6 {
+    font-family: var(--bv-font-sans);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Pullquote & Quotes */
+#primary blockquote, .site-main blockquote, .bv-pullquote, .wp-block-pullquote {
+    font-family: var(--bv-font-quote);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Material Symbols Alignment */
+.material-symbols-outlined {
+    direction: ltr;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #EFEAE0;
+}
+::-webkit-scrollbar-thumb {
+    background: #E0D6C8;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6B4E3D;
+}
+
+/* Header Light & Seamless */
+.bv-header {
+    background: transparent !important;
+    border-bottom: 1px solid transparent !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease !important;
+}
+
+.bv-header.is-scrolled {
+    background: rgba(247, 244, 238, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 25px rgba(107, 78, 61, 0.08) !important;
+    border-bottom: 1px solid rgba(224, 214, 200, 0.8) !important;
+}
+
+/* Navigation Links */
+.bv-nav-link {
+    color: var(--bv-ink) !important;
+    font-family: var(--bv-font-sans);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.bv-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--bv-brown);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+.bv-nav-link:hover {
+    color: var(--bv-brown) !important;
+}
+
+.bv-nav-link:hover::after {
+    width: 100%;
+}
+
+/* Buttons (Exact Customizer Specs: 15px / Medium 500) */
+.bv-btn-primary, .bv-btn-primary .wp-block-button__link, .bv-btn-primary a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    background-color: var(--bv-brown) !important;
+    color: #FFFFFF !important;
+    font-family: var(--bv-font-sans) !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    line-height: 1.2;
+    padding: 0.8125rem 1.75rem;
+    border-radius: 9999px;
+    border: 1.5px solid var(--bv-brown);
+    box-shadow: 0 4px 15px rgba(107, 78, 61, 0.18);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bv-btn-primary:hover, .wp-block-button__link:hover {
+    background-color: var(--bv-brown-dark) !important;
+    border-color: var(--bv-brown-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 78, 61, 0.28);
+    color: #FFFFFF !important;
+}
+
+.bv-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    background-color: transparent !important;
+    color: var(--bv-brown) !important;
+    font-family: var(--bv-font-sans) !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    line-height: 1.2;
+    padding: 0.8125rem 1.75rem;
+    border-radius: 9999px;
+    border: 1.5px solid var(--bv-brown);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bv-btn-outline:hover {
+    background-color: var(--bv-brown) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 78, 61, 0.18);
+}
+
+/* Polaroid Card Base */
+.bv-polaroid {
+    background: #FFFFFF;
+    padding: 0.875rem 0.875rem 1.25rem 0.875rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.12), 0 0 0 1px rgba(224, 214, 200, 0.7);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.bv-polaroid:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -5px rgba(107, 78, 61, 0.20), 0 0 0 1px rgba(107, 78, 61, 0.3);
+}
+
+/* Hero Floating Polaroid Cluster (Exact Match to Original Luxury Design) */
+.bv-hero-collage-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 1.5rem auto 2.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bv-polaroid-left {
+    width: 230px;
+    margin-right: -45px;
+    z-index: 10;
+    transform: rotate(-6deg);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.35s ease;
+}
+
+.bv-polaroid-left:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05);
+    z-index: 30;
+}
+
+.bv-polaroid-center {
+    width: 380px;
+    max-width: 92vw;
+    z-index: 20;
+    transform: scale(1);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bv-polaroid-center:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.bv-polaroid-right {
+    width: 230px;
+    margin-left: -45px;
+    z-index: 10;
+    transform: rotate(6deg);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.35s ease;
+}
+
+.bv-polaroid-right:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05);
+    z-index: 30;
+}
+
+.bv-polaroid-left .bv-polaroid-media,
+.bv-polaroid-right .bv-polaroid-media {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: var(--bv-bg-soft);
+    margin-bottom: 0.75rem;
+}
+
+.bv-polaroid-center .bv-polaroid-media {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: var(--bv-bg-soft);
+    margin-bottom: 1rem;
+}
+
+.bv-polaroid-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .bv-polaroid-left,
+    .bv-polaroid-right {
+        display: none !important;
+    }
+    .bv-polaroid-center {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .bv-polaroid-center .bv-polaroid-media {
+        height: 320px;
+    }
+}
+
+/* Pricing Card */
+.bv-price-card {
+    background: #FFFFFF;
+    border: 1px solid var(--bv-border-light);
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 4px 20px rgba(107, 78, 61, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.bv-price-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--bv-brown);
+    box-shadow: 0 20px 40px -10px rgba(107, 78, 61, 0.15);
+}
+
+.bv-price-card.featured {
+    border: 2px solid var(--bv-brown);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.14);
+}
+
+.price-strike {
+    position: relative;
+    color: var(--bv-discount);
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+/* Terms Accordion */
+.bv-term-item {
+    background: #FFFFFF;
+    border: 1px solid var(--bv-border-light);
+    border-radius: 0.875rem;
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bv-term-item.is-active {
+    border-color: var(--bv-brown);
+    box-shadow: 0 4px 15px rgba(107, 78, 61, 0.08);
+}
+
+.bv-term-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.125rem 1.5rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--bv-font-serif);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--bv-ink);
+    transition: color 0.2s ease;
+}
+
+.bv-term-trigger:hover {
+    color: var(--bv-brown);
+}
+
+.bv-term-content {
+    display: none;
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: var(--bv-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.bv-term-item.is-active .bv-term-content {
+    display: block;
+}
+
+.bv-term-icon {
+    transition: transform 0.3s ease;
+    color: var(--bv-brown);
+}
+
+.bv-term-item.is-active .bv-term-icon {
+    transform: rotate(180deg);
+}
+
+/* Gallery Filter Tabs */
+.bv-filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-family: var(--bv-font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bv-muted);
+    background: #FFFFFF;
+    border: 1px solid var(--bv-border-light);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.bv-filter-btn:hover {
+    color: var(--bv-brown);
+    border-color: var(--bv-brown);
+}
+
+.bv-filter-btn.active {
+    background: var(--bv-brown);
+    color: #FFFFFF;
+    border-color: var(--bv-brown);
+    box-shadow: 0 4px 12px rgba(107, 78, 61, 0.25);
+}
+
+/* Floating WhatsApp Button */
+.bv-floating-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--whatsapp-green);
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bv-floating-whatsapp:hover {
+    background-color: var(--whatsapp-dark);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Scroll Reveal (Only hide on frontend, always visible in editor) */
+body:not(.wp-admin) .bbz-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body:not(.wp-admin) .bbz-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.editor-styles-wrapper .bbz-reveal,
+.bv-visual-editor .bbz-reveal,
+body.wp-admin .bbz-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+/* Mobile Navigation Drawer & Backdrop */
+.bbz-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(30, 24, 21, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.bbz-mobile-backdrop.is-open,
+.bbz-mobile-backdrop.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.bbz-mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 360px;
+    height: 100vh;
+    background-color: var(--bv-bg);
+    z-index: 999;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.bbz-mobile-drawer.is-open,
+.bbz-mobile-drawer.is-active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+    .bbz-mobile-drawer,
+    .bbz-mobile-backdrop {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Gutenberg the_content() Frontend & Block Styling
+   Makes all Gutenberg blocks render 100% identical to the luxury design
+   ========================================================================== */
+
+/* Section Containers */
+.bv-entry-content .bv-section-hero,
+.bv-entry-content .bv-section-about,
+.bv-entry-content .bv-section-services,
+.bv-entry-content .bv-section-pricing,
+.bv-entry-content .bv-section-gallery,
+.bv-entry-content .bv-section-terms,
+.bv-entry-content .bv-section-contact {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .bv-entry-content .bv-section-hero,
+    .bv-entry-content .bv-section-about,
+    .bv-entry-content .bv-section-services,
+    .bv-entry-content .bv-section-pricing,
+    .bv-entry-content .bv-section-gallery,
+    .bv-entry-content .bv-section-terms,
+    .bv-entry-content .bv-section-contact {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bv-entry-content .bv-section-hero,
+    .bv-entry-content .bv-section-about,
+    .bv-entry-content .bv-section-services,
+    .bv-entry-content .bv-section-pricing,
+    .bv-entry-content .bv-section-gallery,
+    .bv-entry-content .bv-section-terms,
+    .bv-entry-content .bv-section-contact {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.bv-entry-content .bv-section-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .bv-entry-content .bv-section-hero {
+        padding-top: 3.5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.bv-entry-content .bv-hero-welcome {
+    font-family: var(--bv-font-serif);
+    font-size: 1.5rem;
+    color: var(--bv-brown);
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.bv-entry-content .bv-hero-title {
+    font-family: var(--bv-font-serif);
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--bv-ink);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .bv-entry-content .bv-hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bv-entry-content .bv-hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+.bv-entry-content .bv-hero-sub {
+    font-family: var(--bv-font-sans);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--bv-muted);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Hero Polaroid Collage Cluster in the_content() */
+.bv-entry-content .bv-hero-collage,
+.bv-hero-collage {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 900px !important;
+    margin: 1.5rem auto 2.5rem auto !important;
+    position: relative !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-rotate-left,
+.bv-hero-collage .bv-rotate-left {
+    width: 230px !important;
+    flex: 0 0 230px !important;
+    margin-right: -45px !important;
+    z-index: 10 !important;
+    transform: rotate(-6deg) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.35s ease !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-rotate-left:hover,
+.bv-hero-collage .bv-rotate-left:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05) !important;
+    z-index: 30 !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-polaroid-center,
+.bv-hero-collage .bv-polaroid-center {
+    width: 380px !important;
+    flex: 0 0 380px !important;
+    max-width: 92vw !important;
+    z-index: 20 !important;
+    transform: scale(1) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-polaroid-center:hover,
+.bv-hero-collage .bv-polaroid-center:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-rotate-right,
+.bv-hero-collage .bv-rotate-right {
+    width: 230px !important;
+    flex: 0 0 230px !important;
+    margin-left: -45px !important;
+    z-index: 10 !important;
+    transform: rotate(6deg) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.35s ease !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-rotate-right:hover,
+.bv-hero-collage .bv-rotate-right:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05) !important;
+    z-index: 30 !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-polaroid-img,
+.bv-entry-content .bv-hero-collage .wp-block-image {
+    margin: 0 0 0.75rem 0 !important;
+    padding: 0 !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    background-color: var(--bv-bg-soft) !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-polaroid-img img,
+.bv-entry-content .bv-hero-collage .wp-block-image img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    display: block !important;
+    border-radius: 0.5rem !important;
+}
+
+.bv-entry-content .bv-hero-collage .bv-polaroid-center .bv-polaroid-img img,
+.bv-entry-content .bv-hero-collage .bv-polaroid-center .wp-block-image img {
+    height: 380px !important;
+    border-radius: 0.75rem !important;
+}
+
+@media (max-width: 640px) {
+    .bv-entry-content .bv-hero-collage .bv-rotate-left,
+    .bv-entry-content .bv-hero-collage .bv-rotate-right {
+        display: none !important;
+    }
+    .bv-entry-content .bv-hero-collage .bv-polaroid-center {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+    .bv-entry-content .bv-hero-collage .bv-polaroid-center .bv-polaroid-img img,
+    .bv-entry-content .bv-hero-collage .bv-polaroid-center .wp-block-image img {
+        height: 320px !important;
+    }
+}
+
+/* Hero CTA Buttons */
+.bv-entry-content .bv-hero-cta-buttons,
+.bv-entry-content .wp-block-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin-top: 2.5rem !important;
+}
+
+/* About Section */
+.bv-entry-content .bv-section-about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #FFFFFF;
+}
+
+.bv-entry-content .bv-about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+    .bv-entry-content .bv-about-grid {
+        grid-template-columns: 7fr 5fr !important;
+    }
+}
+
+.bv-entry-content .bv-about-right .bv-polaroid-img img,
+.bv-entry-content .bv-about-right .wp-block-image img {
+    width: 100% !important;
+    height: 420px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    border-radius: 0.75rem !important;
+}
+
+.bv-entry-content .bv-stats-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+}
+
+.bv-entry-content .bv-stat-box {
+    background: var(--bv-bg) !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 0.875rem !important;
+    border: 1px solid var(--bv-border-light) !important;
+    text-align: center !important;
+}
+
+/* Services Section */
+.bv-entry-content .bv-section-services {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: var(--bv-bg);
+}
+
+.bv-entry-content .bv-services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+    .bv-entry-content .bv-services-grid {
+        grid-template-columns: 5fr 7fr !important;
+    }
+}
+
+.bv-entry-content .bv-promise-item {
+    background: var(--bv-bg) !important;
+    padding: 1.25rem 1.5rem !important;
+    border-radius: 0.875rem !important;
+    border: 1px solid var(--bv-border-light) !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Pricing Section */
+.bv-entry-content .bv-section-pricing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #FFFFFF;
+}
+
+.bv-entry-content .bv-pricing-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    margin-top: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+    .bv-entry-content .bv-pricing-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* Gallery Section */
+.bv-entry-content .bv-section-gallery {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: var(--bv-bg);
+}
+
+.bv-entry-content .bv-gallery-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+}
+
+@media (min-width: 768px) {
+    .bv-entry-content .bv-gallery-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+.bv-entry-content .bv-gallery-grid .bv-polaroid-img img,
+.bv-entry-content .bv-gallery-grid .wp-block-image img {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 0.5rem !important;
+}
+
+/* Terms Section */
+.bv-entry-content .bv-section-terms {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #FFFFFF;
+}
+
+.bv-entry-content .bv-term-item {
+    background: #FFFFFF !important;
+    border: 1px solid var(--bv-border-light) !important;
+    border-radius: 0.875rem !important;
+    padding: 1.125rem 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Contact / Quote Section */
+.bv-entry-content .bv-section-contact {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: var(--bv-bg);
+    text-align: center !important;
+}
+
+/* Polaroid Card Base for Gutenberg Column */
+.bv-entry-content .bv-col-polaroid,
+.bv-col-polaroid {
+    background: #FFFFFF !important;
+    padding: 0.875rem 0.875rem 1.25rem 0.875rem !important;
+    border-radius: 0.875rem !important;
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.12), 0 0 0 1px rgba(224, 214, 200, 0.7) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.bv-entry-content .bv-col-polaroid.bv-polaroid-center,
+.bv-col-polaroid.bv-polaroid-center {
+    padding: 1rem 1rem 1.5rem 1rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 20px 40px -10px rgba(107, 78, 61, 0.22), 0 0 0 1px rgba(224, 214, 200, 0.8) !important;
+}
+
+/* ==========================================================================
+   Hero & Button Exact Polish Fixes
+   ========================================================================== */
+
+/* Fix Outline Buttons everywhere in Gutenberg & Theme */
+.bv-btn-outline,
+.bv-btn-outline a,
+.bv-btn-outline .wp-block-button__link,
+.wp-block-button.bv-btn-outline .wp-block-button__link {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #6B4E3D !important;
+    border: 1.5px solid #6B4E3D !important;
+    border-radius: 9999px !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    padding: 0.8125rem 1.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.bv-btn-outline:hover,
+.bv-btn-outline a:hover,
+.bv-btn-outline .wp-block-button__link:hover,
+.wp-block-button.bv-btn-outline .wp-block-button__link:hover {
+    background-color: #6B4E3D !important;
+    background: #6B4E3D !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(107, 78, 61, 0.18) !important;
+}
+
+/* Fix Hero Polaroid Collage Box & Reset Inner Duplicates */
+.bv-hero-collage .bv-col-polaroid {
+    background: #FFFFFF !important;
+    padding: 0.875rem 0.875rem 1.25rem 0.875rem !important;
+    border-radius: 0.875rem !important;
+    box-shadow: 0 10px 30px -5px rgba(107, 78, 61, 0.12), 0 0 0 1px rgba(224, 214, 200, 0.7) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.bv-hero-collage .bv-col-polaroid .bv-polaroid {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+.bv-hero-collage .bv-polaroid-center {
+    width: 380px !important;
+    flex: 0 0 380px !important;
+    max-width: 92vw !important;
+    z-index: 20 !important;
+    padding: 1rem 1rem 1.5rem 1rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 20px 40px -10px rgba(107, 78, 61, 0.22), 0 0 0 1px rgba(224, 214, 200, 0.8) !important;
+    transform: scale(1) !important;
+}
+
+.bv-hero-collage .bv-polaroid-caption {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-top: 0.5rem !important;
+    color: #1E1815 !important;
+}
+
+/* Ensure Hero Headings are prominently spaced */
+.bv-section-hero {
+    padding-top: 2rem !important;
+    padding-bottom: 3.5rem !important;
+    text-align: center !important;
+}
+
+.bv-section-hero .bv-hero-welcome {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.bv-section-hero .bv-hero-title {
+    margin-bottom: 0.5rem !important;
+}
+
+.bv-section-hero .bv-hero-sub {
+    margin-bottom: 2rem !important;
+}
